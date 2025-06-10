@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Radio Frecuencia Popular</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+
+
+<header>
+  <div class="header-contenido">
+    <h1>Radio Frecuencia Popular En Vivo</h1>
+    <div class="redes-sociales">
+      <a href=https://www.facebook.com/TuPaginaOficial target="_blank"><img src="img/facebook.png" alt="TikTok">
+     <a href="https://www.youtube.com/@TuCanal" target="_blank"><img src="img/youtube.png" alt="youtube">
+      <a href="https://www.tiktok.com/@tucuenta" target="_blank"><img src="img/tictok.png" alt="TikTok">
+      <a href="https://wa.me/926188249" target="_blank"><img src="img/whatsapp.png" alt="WhatsApp"></a>
+    </div>
+  </div>
+</header>
+
+
+  <nav>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <ul class="menu">
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Nosotros</a>
+        <ul class="submenu">
+          <li><a href="nosotros.html">Quiénes Somos</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Música</a>
+        <ul class="submenu">
+          <li><a href="#">Ranking</a></li>
+          <li><a href="#">Lo Nuevo</a></li>
+          <li><a href="#">Programas</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Noticias</a>
+        <ul class="submenu">
+          <li><a href="#">Locales</a></li>
+          <li><a href="#">Nacionales</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Contactos</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- SLIDER AUTOMÁTICO -->
+    <section class="slider-container">
+      <div class="slider fade"><img src="img/cabina1.jpg" alt="Imagen 1"></div>
+      <div class="slider fade"><img src="img/cabina.jpg" alt="Imagen 2"></div>
+      <div class="slider fade"><img src="img/micro.jpg" alt="Imagen 3"></div>
+      <div class="slider fade"><img src="img/micro1.jpg" alt="Imagen 4"></div>
+    </section>
+
+    <!-- REPRODUCTOR -->
+    <section class="reproductor">
+  <h2>Escúchanos en vivo</h2>
+  <div class="custom-player">
+    <button id="playPauseBtn">▶</button>
+    <div class="info">
+      <span id="status">Pausado</span>
+      <div class="barra-emision ondas" id="ondasBarra">
+     <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    </div>
+    <input type="range" id="volumen" min="0" max="1" step="0.01" value="1">
+    <audio id="radioPlayer">
+      <source src="https://stream.zeno.fm/3kvrtz7fmj0tv " type="audio/mpeg">
+    </audio>
+  </div>
+</section>
+  </main>
+
+   <!-- Programación -->
+  <section id="programacion" class="programacion">
+  <h2>Programación en Vivo 2025</h2>
+  <ol>
+    <li><strong>Lunes a Viernes:</strong> 8:00 AM - Despertar Popular</li>
+    <li><strong>12:00 PM:</strong> Noticias del Día</li>
+    <li><strong>2:00 PM:</strong> mundo joven</li>
+     <li><strong>4:00 PM:</strong> La Hora del Pueblo</li>
+      <li><strong>6:00 PM:</strong> toquecito romantico</li>
+       <li><strong>7:00 PM:</strong> bacilon de la noche</li>    
+  </ol>
+</section>
+
+  <!-- Noticias -->
+  <section class="noticias">
+  <h2>Últimas Noticias</h2>
+  <ol>
+    <li>
+      <article>
+        <h3>Nueva Entrevista con Artista Local</h3>
+        <p>Este sábado a las 10 AM, en vivo por Radio Frecuencia Popular...</p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h3>Lanzamiento de Nueva Programación</h3>
+        <p>La nueva grilla de programas se estrena el lunes a las 7 AM...</p>
+      </article>
+    </li>
+  </ol>
+</section>
+
+  <!-- Galería -->
+  <section id="galeria" class="galeria">
+    <h2>Galería</h2>
+    <div class="imagenes">
+      <img src="img/micro1.jpg" alt="Evento 1">
+      <img src="img/micro.jpg" alt="Evento 2">
+      <img src="img/cabina.jpg" alt="Evento 2">
+      <img src="img/cabina1.jpg" alt="Evento 2">
+      <img src="img/micro1.jpg" alt="Evento 2">
+      <img src="img/cabina.jpg" alt="Evento 2">
+
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <form action="enviar.php" method="post" class="formulario-contacto">
+  <h2>Contáctanos</h2>
+  <input type="text" name="nombre" placeholder="Tu nombre" required>
+  <input type="email" name="email" placeholder="Tu correo" required>
+  <textarea name="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
+  <button type="submit">Enviar</button>
+</form>
+
+  <!-- App -->
+  <section class="app">
+    <h2>Escúchanos desde tu celular</h2>
+    <a href="#" class="btn-descarga">Descargar App</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Frecuencia Popular. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
