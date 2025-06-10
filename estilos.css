@@ -1,0 +1,380 @@
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+}
+
+/* NAV & HEADER */
+header {
+  
+  color: white;
+  padding: 20px;
+  text-align: center;
+  background-color: #222; 
+ 
+}
+nav {
+  background-color: #b71c1c;
+  position: relative;
+}
+.menu-toggle {
+  font-size: 24px;
+  background: transparent;
+  color: white;
+  border: none;
+  padding: 10px;
+  display: none;
+}
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.menu li {
+  position: relative;
+}
+.menu a {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+}
+.submenu {
+  display: none;
+  position: absolute;
+  background-color: #880e4f;
+  top: 100%;
+  left: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10; /* Menor que el slider si lo deseas detrás */
+}
+.menu li:hover .submenu {
+  display: block;
+}
+
+/* SLIDER */
+.slider-container {
+  max-width: 900px;
+  height: 400px;
+  margin: 40px auto 60px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+   z-index: 1;
+}
+.slider {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.fade {
+  animation: fade 1s ease-in-out;
+}
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+
+/* FOOTER */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.barra-emision {
+  width: 200px;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.progreso {
+  width: 0%;
+  height: 100%;
+  background-color: #4caf50;
+}
+
+/* Solo se anima si tiene la clase "activo" */
+.progreso.activo {
+  animation: carga 2s linear infinite;
+}
+
+@keyframes carga {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+/* reproductor */
+
+/* color del boton del reproductor */
+#playPauseBtn:hover {
+  background-color: #cc0000;
+}
+
+.reproductor {
+  text-align: center;
+  margin: 40px auto;
+}
+
+.custom-player {
+  display: inline-block;
+  padding: 20px;
+  background: #222;
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #000;
+}
+
+.custom-player button {
+  font-size: 1.5em;
+  padding: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.custom-player .info {
+  margin-top: 10px;
+}
+
+.barra-emision {
+  background-color: #666;
+  height: 6px;
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.progreso {
+  background-color: #00ff00;
+  height: 100%;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+
+/* barra emision hondas*/
+
+.barra-emision.ondas {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 4px;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.barra-emision.ondas span {
+  display: block;
+  width: 4px;
+  height: 100%;
+  background: lime;
+  animation: onda 1s infinite ease-in-out;
+}
+
+.barra-emision.ondas span:nth-child(1) { animation-delay: 0s; }
+.barra-emision.ondas span:nth-child(2) { animation-delay: 0.2s; }
+.barra-emision.ondas span:nth-child(3) { animation-delay: 0.4s; }
+.barra-emision.ondas span:nth-child(4) { animation-delay: 0.6s; }
+.barra-emision.ondas span:nth-child(5) { animation-delay: 0.8s; }
+
+@keyframes onda {
+  0%, 100% { height: 20%; }
+  50% { height: 100%; }
+}
+
+/* redes sociales*/
+/* ← aquí cambia left por right izquierda o derecha */
+/* Estilo para el contenedor del header */
+.header-contenido {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+
+}
+
+/* Título principal */
+.header-contenido h1 {
+  font-size: 20px;
+  margin: 0;
+  color: #fff;
+}
+
+/* Íconos sociales alineados a la derecha */
+.redes-sociales {
+  display: flex;
+  gap: 12px;
+}
+
+.redes-sociales a img {
+  width: 30px;
+  height: 30px;
+ 
+  transition: transform 0.3s ease;
+}
+
+.redes-sociales a:hover img {
+  transform: scale(1.1);
+}
+
+/* redondeados y con efecto al pasar el mouse: */
+
+.redes-sociales a img {
+  width: 35px;
+  height: 35px;
+  margin-left: 12px;
+  border-radius: 50%;
+  padding: 5px;
+  background-color: #f0f0f0;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+/* estios para clase programacion */
+
+/* Asegura que la sección de programación tenga fondo distinto */
+.programacion {
+  float: right;
+  width: 300px;
+  background: #e8f5e9;
+  border: 2px solid #4caf50;
+  padding: 20px;
+  margin: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #bbb;
+}
+.programacion ol {
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+
+/* estilos para ultimas noticias */
+
+.noticias {
+  float: left;
+  width: 60%;
+  background: #fff8e1;
+  border: 2px solid #fbc02d;
+  padding: 20px;
+  margin: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #ccc;
+}
+.noticias ol {
+  list-style-position: inside;
+  padding-left: 0;
+}
+.noticias article {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+
+/* estilos para galeria */
+.galeria {
+  clear: both;
+  text-align: center;
+  padding: 30px;
+}
+
+.galeria .imagenes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.galeria .imagenes img {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.galeria .imagenes img:hover {
+  transform: scale(1.05);  /* efecto al momento de pasar el mause */
+  box-shadow: 0 0 10px #666;
+}
+
+/* estilos para contactos */
+
+.formulario-contacto {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+.formulario-contacto h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.formulario-contacto button {
+  width: 100%;
+  background-color: #0066cc;
+  color: #fff;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.formulario-contacto button:hover {
+  background-color: #004c99;
+}
+
+
+/* Mejora del botón de descarga de App */
+.btn-descarga {
+  background-color: #007BFF;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 1.2em;
+  display: inline-block;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-descarga:hover {
+  background-color: #0056b3;
+}
+
+
